@@ -1,0 +1,56 @@
+{
+    "name": "mirage-types-lwt-actual",
+    "exportedEnvVars": {
+        "mirage_types_lwt_enable": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "enable"
+        },
+        "mirage_types_lwt_version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "2.8.0"
+        },
+        "FINDLIB": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/lib"
+        },
+        "version": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "2.8.0"
+        },
+        "mirage_types_lwt_installed": {
+            "global": true,
+            "globalCollisionBehavior": "clobber",
+            "val": "true"
+        },
+        "PATH": {
+            "global": true,
+            "resolveAsRelativePath": true,
+            "globalCollisionBehavior": "joinPath",
+            "val": "./_build/ocamlfind/bin"
+        }
+    },
+    "version": "2.8.0",
+    "dependencies": {
+        "@opam-alpha/cstruct": ">=1.4.0",
+        "@opam-alpha/ocamlfind": "*",
+        "@opam-alpha/ipaddr": "*",
+        "@opam-alpha/io-page": ">=1.4.0",
+        "dependency-env": "https://github.com/npm-ml/dependency-env.git",
+        "substs": "https://github.com/yunxing/substs.git",
+        "@opam-alpha/mirage-types": ">=2.8.0",
+        "@opam-alpha/lwt": "*",
+        "nopam": "https://github.com/yunxing/nopam.git",
+        "opam-installer-bin": "https://github.com/yunxing/opam-installer-bin.git"
+    },
+    "scripts": {
+        "postinstall": "eval $(dependencyEnv) && nopam && (opam-installer --prefix=$opam_prefix || true)"
+    },
+    "peerDependencies": {
+        "@opam-alpha/ocaml": ">= 4.2.3"
+    }
+}
